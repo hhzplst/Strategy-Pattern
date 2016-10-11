@@ -1,5 +1,7 @@
+import java.util.ArrayList;
+
 public interface SchedulingAlgorithm {
 
-  public int run(Job job);
+  public int run(ArrayList<Job> jobList);
 
 }

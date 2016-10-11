@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.util.ArrayList;
 
 public class JobSchedulerSimulator {
 
@@ -9,44 +10,37 @@ public class JobSchedulerSimulator {
   public static void main(String[] args) {
 
     double FIFOAverageTurnaround, SJFAverageTurnaround, RRAverageTurnaround;
-    int FIFOTurnaroundSum = 0, SJFTurnaroundSum = 0, RRTurnaroundSum = 0;
-
-    Job[] jobList = createJobList(JOB_NUM, MAX_PROCESS_TIME, MIN_PROCESS_TIME);
 
     FIFOScheduler myFIFOScheduler = new FIFOScheduler();
     SJFScheduler mySJFScheduler = new SJFScheduler();
     RRScheduler myRRScheduler = new RRScheduler();
 
-    for (int i = 0; i < JOB_NUM; i++) {
-      myFIFOScheduler.process(jobList[i]);
-      FIFOTurnaroundSum += myFIFOScheduler.getTurnaroundTime();
+    ArrayList<Job> jobList = createJobList(JOB_NUM, MAX_PROCESS_TIME, MIN_PROCESS_TIME);
 
-      mySJFScheduler.process(jobList[i]);
-      SJFTurnaroundSum += mySJFScheduler.getTurnaroundTime();
+    myFIFOScheduler.process(jobList);
+    mySJFScheduler.process(jobList);
+    myRRScheduler.process(jobList);
 
-      myRRScheduler.process(jobList[i]);
-      RRTurnaroundSum += myRRScheduler.getTurnaroundTime();
-    }
+    FIFOAverageTurnaround = (double) myFIFOScheduler.getTurnaroundTime() / JOB_NUM;
+    SJFAverageTurnaround = (double) mySJFScheduler.getTurnaroundTime() / JOB_NUM;
+    RRAverageTurnaround = (double) myRRScheduler.getTurnaroundTime() / JOB_NUM;
 
-    FIFOAverageTurnaround= FIFOTurnaroundSum / JOB_NUM;
-    SJFAverageTurnaround = SJFTurnaroundSum / JOB_NUM;
-    RRAverageTurnaround = RRTurnaroundSum / JOB_NUM;
 
     System.out.printf("Average Turnaround Time:\n%d\n%d\n%d", 
                           FIFOAverageTurnaround, SJFAverageTurnaround, RRAverageTurnaround);
 
   }
 
-  private static Job[] createJobList(int jobNumber, int maxProcessTime, int minProcessTime) {
+  private static ArrayList<Job> createJobList(int jobNumber, int maxProcessTime, int minProcessTime) {
 
     Random generator = new Random();
     int tempProcessingTime;
 
-    Job[] jobList = new Job[jobNumber];
+    ArrayList<Job> jobList = new ArrayList<Job>(jobNumber);
 
     for (int i = 0; i < jobNumber; i++) {
       tempProcessingTime = generator.nextInt(maxProcessTime - minProcessTime + 1) + minProcessTime;
-      jobList[i] = new Job(tempProcessingTime);
+      jobList.add(new Job(tempProcessingTime));
     }
 
     return jobList;

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>504</x>
+      <y>48</y>
+      <w>192</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>
+&lt;&lt;Interface&gt;&gt;
+SchedulingAlgorithm
+
+--
+
++ run(ArrayList&lt;Job&gt;): int
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>608</x>
+      <y>136</y>
+      <w>168</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;190.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>592</x>
+      <y>136</y>
+      <w>24</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>392</x>
+      <y>136</y>
+      <w>208</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>240.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>304</x>
+      <y>232</y>
+      <w>192</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>
+FIFO
+
+--
+
++ run(ArrayList&lt;Job&gt;): int
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>504</x>
+      <y>232</y>
+      <w>192</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>
+SJF
+
+--
+
++ run(ArrayList&lt;Job&gt;): int
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>704</x>
+      <y>232</y>
+      <w>192</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>
+RR
+
+--
+
++ run(ArrayList&lt;Job&gt;): int
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>480</x>
+      <y>376</y>
+      <w>232</w>
+      <h>176</h>
+    </coordinates>
+    <panel_attributes>
+JobScheduler
+
+--
+
+~ processingTime: int
+~ waitingTime: int
+~ turnaroundTime: int
+~ algorithm: SchedulingAlgorithm
+
+--
+
++ getTurnAroundTime();
+/+ process(ArrayList&lt;Job&gt;)/
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>712</x>
+      <y>632</y>
+      <w>176</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>
+RRScheduler
+
+--
+
+~ algorithm: RR
+
+--
+
+/+ process(ArrayList&lt;Job&gt;)/
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>504</x>
+      <y>632</y>
+      <w>168</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>
+SJFScheduler
+
+--
+
+~ algorithm: SJF
+
+--
+
+/+ process(ArrayList&lt;Job&gt;)/
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>304</x>
+      <y>632</y>
+      <w>160</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>
+FIFOScheduler
+
+--
+
+~ algorithm: FIFO
+
+--
+
+/+ process(ArrayList&lt;Job&gt;)/
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>376</x>
+      <y>544</y>
+      <w>200</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>230.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>584</x>
+      <y>544</y>
+      <w>24</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>616</x>
+      <y>544</y>
+      <w>192</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;220.0;110.0</additional_attributes>
+  </element>
+</diagram>
