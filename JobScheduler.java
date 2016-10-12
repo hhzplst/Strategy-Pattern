@@ -2,14 +2,17 @@ import java.util.ArrayList;
 
 public abstract class JobScheduler {
 
-  protected int turnaroundTime;
-
   SchedulingAlgorithm algorithm;
-  
-  public int getTurnaroundTime() {
-    return turnaroundTime;
-  }
+  ArrayList<Job> jobList;
 
-  abstract void process(ArrayList<Job> jobList);
+  abstract void process();
+
+  public double calculateAvgTurnaroundTime() {
+    int turnaroundSum = 0;
+    for (Job job : jobList)
+      turnaroundSum += job.getTurnaroundTime();
+
+    return turnaroundSum / jobList.size();
+  }
 
 }

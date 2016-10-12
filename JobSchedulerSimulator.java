@@ -11,19 +11,19 @@ public class JobSchedulerSimulator {
 
     double FIFOAverageTurnaround, SJFAverageTurnaround, RRAverageTurnaround;
 
-    FIFOScheduler myFIFOScheduler = new FIFOScheduler();
-    SJFScheduler mySJFScheduler = new SJFScheduler();
-    RRScheduler myRRScheduler = new RRScheduler();
-
     ArrayList<Job> jobList = createJobList(JOB_NUM, MAX_PROCESS_TIME, MIN_PROCESS_TIME);
 
-    myFIFOScheduler.process(jobList);
-    mySJFScheduler.process(jobList);
-    myRRScheduler.process(jobList);
+    FIFOScheduler myFIFOScheduler = new FIFOScheduler(jobList);
+    myFIFOScheduler.process();
+    FIFOAverageTurnaround = myFIFOScheduler.calculateAvgTurnaroundTime();
 
-    FIFOAverageTurnaround = (double) myFIFOScheduler.getTurnaroundTime() / JOB_NUM;
-    SJFAverageTurnaround = (double) mySJFScheduler.getTurnaroundTime() / JOB_NUM;
-    RRAverageTurnaround = (double) myRRScheduler.getTurnaroundTime() / JOB_NUM;
+    SJFScheduler mySJFScheduler = new SJFScheduler(jobList);
+    mySJFScheduler.process();
+    SJFAverageTurnaround = mySJFScheduler.calculateAvgTurnaroundTime();
+
+    RRScheduler myRRScheduler = new RRScheduler(jobList);
+    myRRScheduler.process();
+    RRAverageTurnaround =  myRRScheduler.calculateAvgTurnaroundTime();    
 
 
     System.out.printf("Average Turnaround Time:\n%d\n%d\n%d", 
