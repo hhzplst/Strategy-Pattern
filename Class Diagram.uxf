@@ -24,16 +24,16 @@ SchedulingAlgorithm
     <coordinates>
       <x>560</x>
       <y>112</y>
-      <w>160</w>
-      <h>112</h>
+      <w>240</w>
+      <h>104</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;180.0;120.0</additional_attributes>
+    <additional_attributes>10.0;10.0;280.0;110.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>512</x>
+      <x>504</x>
       <y>112</y>
       <w>24</w>
       <h>112</h>
@@ -72,15 +72,19 @@ FIFO
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>384</x>
-      <y>208</y>
+      <x>664</x>
+      <y>200</y>
       <w>248</w>
-      <h>88</h>
+      <h>128</h>
     </coordinates>
     <panel_attributes>
-SJF
+RR
 
 --
+
+  TIME_SLICE : int
+
+-
 
 + run( jobList : ArrayList&lt;Job&gt;, job : Job )
 </panel_attributes>
@@ -89,13 +93,13 @@ SJF
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>648</x>
+      <x>392</x>
       <y>208</y>
       <w>248</w>
       <h>88</h>
     </coordinates>
     <panel_attributes>
-RR
+SJF
 
 --
 
@@ -134,20 +138,21 @@ RR
       <x>696</x>
       <y>608</y>
       <w>248</w>
-      <h>136</h>
+      <h>160</h>
     </coordinates>
     <panel_attributes>
 RRScheduler
 
 --
 
+ notDone : boolean
  algorithm: RR
 
 --
 
 + RRScheduler( jobList : ArrayList&lt;Job&gt; )
 + process()
-</panel_attributes>
+- checkIfDone() : boolean</panel_attributes>
     <additional_attributes/>
   </element>
   <element>

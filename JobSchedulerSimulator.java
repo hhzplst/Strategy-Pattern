@@ -9,7 +9,7 @@ public class JobSchedulerSimulator {
 
   public static void main(String[] args) {
 
-    double FIFOAverageTurnaround, SJFAverageTurnaround, RRAverageTurnaround;
+    double FIFOAverageTurnaround = 0, SJFAverageTurnaround = 0, RRAverageTurnaround = 0;
 
     ArrayList<Job> jobList = createJobList(JOB_NUM, MAX_PROCESS_TIME, MIN_PROCESS_TIME);
 
@@ -26,7 +26,7 @@ public class JobSchedulerSimulator {
     RRAverageTurnaround =  myRRScheduler.calculateAvgTurnaroundTime();    
 
 
-    System.out.printf("Average Turnaround Time:\n%d\n%d\n%d", 
+    System.out.printf("Average Turnaround Time:\n%.2f\n%.2f\n%.2f", 
                           FIFOAverageTurnaround, SJFAverageTurnaround, RRAverageTurnaround);
 
   }
