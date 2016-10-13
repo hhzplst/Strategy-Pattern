@@ -26,8 +26,11 @@ public class JobSchedulerSimulator {
     RRAverageTurnaround =  myRRScheduler.calculateAvgTurnaroundTime();    
 
 
-    System.out.printf("Average Turnaround Time:\n%.2f\n%.2f\n%.2f", 
-                          FIFOAverageTurnaround, SJFAverageTurnaround, RRAverageTurnaround);
+    System.out.printf("Average Turnaround Time:\n" +
+                       "FIFO: %.2f units\n" +
+                       "SJF: %.2f  units\n" +
+                       "RR: %.2f units\n", 
+                       FIFOAverageTurnaround, SJFAverageTurnaround, RRAverageTurnaround);
 
   }
 
