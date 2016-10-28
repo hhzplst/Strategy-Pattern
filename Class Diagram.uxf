@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>392</x>
-      <y>24</y>
+      <x>400</x>
+      <y>384</y>
       <w>256</w>
       <h>96</h>
     </coordinates>
@@ -22,43 +22,43 @@ SchedulingAlgorithm
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>560</x>
-      <y>112</y>
-      <w>240</w>
-      <h>104</h>
+      <x>568</x>
+      <y>472</y>
+      <w>264</w>
+      <h>168</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;280.0;110.0</additional_attributes>
+    <additional_attributes>10.0;10.0;310.0;190.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>504</x>
-      <y>112</y>
+      <x>512</x>
+      <y>472</y>
       <w>24</w>
-      <h>112</h>
+      <h>168</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;190.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>264</x>
-      <y>112</y>
-      <w>208</w>
-      <h>112</h>
+      <x>232</x>
+      <y>472</y>
+      <w>248</w>
+      <h>168</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>240.0;10.0;10.0;120.0</additional_attributes>
+    <additional_attributes>290.0;10.0;10.0;190.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>120</x>
-      <y>208</y>
+      <x>88</x>
+      <y>624</y>
       <w>248</w>
-      <h>88</h>
+      <h>104</h>
     </coordinates>
     <panel_attributes>
 FIFO
@@ -72,31 +72,29 @@ FIFO
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>664</x>
-      <y>200</y>
+      <x>696</x>
+      <y>624</y>
       <w>248</w>
-      <h>128</h>
+      <h>104</h>
     </coordinates>
     <panel_attributes>
 RR
 
 --
-
-  TIME_SLICE : int
-  
+- notDone : boolean
+TIME_SLICE : int 
 -
-
 + run( jobList : ArrayList&lt;Job&gt; )
-</panel_attributes>
+- checkIfDone() : boolean</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>392</x>
-      <y>208</y>
-      <w>248</w>
-      <h>88</h>
+      <x>400</x>
+      <y>624</y>
+      <w>256</w>
+      <h>104</h>
     </coordinates>
     <panel_attributes>
 SJF
@@ -110,8 +108,8 @@ SJF
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>400</x>
-      <y>384</y>
+      <x>368</x>
+      <y>72</y>
       <w>304</w>
       <h>152</h>
     </coordinates>
@@ -133,31 +131,8 @@ JobScheduler
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>696</x>
-      <y>608</y>
-      <w>248</w>
-      <h>160</h>
-    </coordinates>
-    <panel_attributes>
-RRScheduler
-
---
-
- notDone : boolean
- algorithm: RR
-
---
-
-+ RRScheduler( jobList : ArrayList&lt;Job&gt; )
-+ process()
-- checkIfDone() : boolean</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>40</x>
-      <y>336</y>
+      <x>56</x>
+      <y>120</y>
       <w>192</w>
       <h>224</h>
     </coordinates>
@@ -184,5 +159,16 @@ Job
 
 </panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>512</x>
+      <y>216</y>
+      <w>24</w>
+      <h>184</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;210.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>
