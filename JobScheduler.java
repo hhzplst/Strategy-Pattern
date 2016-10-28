@@ -1,11 +1,18 @@
 import java.util.ArrayList;
 
-public abstract class JobScheduler {
+public class JobScheduler {
 
-  SchedulingAlgorithm algorithm;
-  ArrayList<Job> jobList;
+  private SchedulingAlgorithm algorithm;
+  private ArrayList<Job> jobList;
 
-  abstract void process();
+  public JobScheduler(SchedulingAlgorithm algorithm, ArrayList<Job> jobs) {
+    this.algorithm = algorithm;
+    this.jobList = jobs;
+  }
+
+  public void process(ArrayList<Job> jobList) {
+    algorithm.run(jobList);
+  }
 
   public double calculateAvgTurnaroundTime() {
     int turnaroundSum = 0;
