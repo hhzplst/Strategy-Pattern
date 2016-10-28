@@ -10,7 +10,7 @@ public class JobScheduler {
     this.jobList = jobs;
   }
 
-  public void process(ArrayList<Job> jobList) {
+  public void process() {
     algorithm.run(jobList);
   }
 

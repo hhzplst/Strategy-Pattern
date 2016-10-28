@@ -9,7 +9,7 @@ public class RR implements SchedulingAlgorithm {
     int index = 0, currentPt = 0, tempWt = 0;
     
     while (notDone) {
-      for (Job job : this.jobList) {
+      for (Job job : jobList) {
         index = jobList.indexOf(job);
         currentPt = job.getProcessingTime();
         if (currentPt > 0) {
@@ -26,11 +26,11 @@ public class RR implements SchedulingAlgorithm {
           }
         }
       }
-      notDone = checkIfDone();
+      notDone = checkIfDone(jobList);
     }     
   }
 
-  private boolean checkIfDone() {
+  private boolean checkIfDone(ArrayList<Job> jobList) {
     for (Job job : jobList)
       if (job.getProcessingTime() > 0) return true;
     return false;

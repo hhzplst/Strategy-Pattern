@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class JobSchedulerSimulator {
 
-  final static int JOB_NUM = 100;
+  final static int JOB_NUM = 500;
   final static int MAX_PROCESS_TIME = 100;
   final static int MIN_PROCESS_TIME = 0;
 
@@ -13,15 +13,15 @@ public class JobSchedulerSimulator {
 
     ArrayList<Job> jobList = createJobList(JOB_NUM, MAX_PROCESS_TIME, MIN_PROCESS_TIME);
 
-    FIFOScheduler myFIFOScheduler = new FIFOScheduler(jobList);
+    JobScheduler myFIFOScheduler = new JobScheduler(new FIFO(), jobList);
     myFIFOScheduler.process();
     FIFOAverageTurnaround = myFIFOScheduler.calculateAvgTurnaroundTime();
 
-    SJFScheduler mySJFScheduler = new SJFScheduler(jobList);
+    JobScheduler mySJFScheduler = new JobScheduler(new SJF(), jobList);
     mySJFScheduler.process();
     SJFAverageTurnaround = mySJFScheduler.calculateAvgTurnaroundTime();
 
-    RRScheduler myRRScheduler = new RRScheduler(jobList);
+    JobScheduler myRRScheduler = new JobScheduler(new RR(), jobList);
     myRRScheduler.process();
     RRAverageTurnaround =  myRRScheduler.calculateAvgTurnaroundTime();    
 
