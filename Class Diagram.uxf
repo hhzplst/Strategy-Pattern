@@ -15,7 +15,7 @@ SchedulingAlgorithm
 
 --
 
-/ run( jobList : ArrayList&lt;Job&gt;, job : Job )/
+/ run( jobList : ArrayList&lt;Job&gt; )/
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -65,7 +65,7 @@ FIFO
 
 --
 
-+ run( jobList : ArrayList&lt;Job&gt;, job : Job )
++ run( jobList : ArrayList&lt;Job&gt; )
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -86,7 +86,7 @@ RR
   
 -
 
-+ run( jobList : ArrayList&lt;Job&gt;, job : Job )
++ run( jobList : ArrayList&lt;Job&gt; )
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -103,32 +103,30 @@ SJF
 
 --
 
-+ run( jobList : ArrayList&lt;Job&gt;, job : Job )
++ run( jobList : ArrayList&lt;Job&gt; )
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>408</x>
-      <y>352</y>
+      <x>400</x>
+      <y>384</y>
       <w>304</w>
       <h>152</h>
     </coordinates>
     <panel_attributes>
-/ JobScheduler /
+JobScheduler
 
 --
 
-   algorithm : SchedulingAlgorithm
-   jobList : ArrayList&lt;Job&gt;
+- algorithm : SchedulingAlgorithm
+- jobList : ArrayList&lt;Job&gt;
 
 --
 
-/   process()/
++ process( jobList : ArrayList&lt;Job&gt; )
 + calculateAvgTurnaroundTime() : double
-
-
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -199,39 +197,6 @@ FIFOScheduler
 + process()
 </panel_attributes>
     <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>320</x>
-      <y>496</y>
-      <w>184</w>
-      <h>128</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>210.0;10.0;10.0;140.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>552</x>
-      <y>496</y>
-      <w>24</w>
-      <h>128</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>624</x>
-      <y>496</y>
-      <w>176</w>
-      <h>128</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;200.0;140.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
