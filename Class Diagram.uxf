@@ -102,9 +102,9 @@ RR
 SJF
 
 --
-
 + run( jobList : ArrayList&lt;Job&gt; )
-</panel_attributes>
+- minHeapify( jobList : ArrayList&lt;Job&gt; )
+- swap( posA : int, posB : int )</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -151,51 +151,6 @@ RRScheduler
 + RRScheduler( jobList : ArrayList&lt;Job&gt; )
 + process()
 - checkIfDone() : boolean</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>424</x>
-      <y>608</y>
-      <w>264</w>
-      <h>160</h>
-    </coordinates>
-    <panel_attributes>
-SJFScheduler
-
---
-
- algorithm: SJF
-
---
-
-+ SJFScheduler( jobList : ArrayList&lt;Job&gt; )
-+ process()
-- minHeapify( jobList : ArrayList&lt;Job&gt; )
-- swap( posA : int, posB : int )</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>144</x>
-      <y>608</y>
-      <w>264</w>
-      <h>136</h>
-    </coordinates>
-    <panel_attributes>
-FIFOScheduler
-
---
-
- algorithm: FIFO
-
---
-
-+ FIFOScheduler( jobList : ArrayList&lt;Job&gt; )
-+ process()
-</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
